@@ -1,0 +1,46 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, white, #e0f2ff, white);
+    padding: 20px;
+  }
+  
+  .featuredVideo {
+    width: 100%;
+    max-width: 1150px; /* Increase max-width of the featured video */
+    height: 400px; 
+    margin-bottom: 20px;
+  }
+  
+  .thumbnailGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increase gap between thumbnails */
+    justify-content: center;
+  }
+  
+  .thumbnail {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s;
+    width: 330px; /* Increase width of thumbnails */
+  }
+  
+  .thumbnail:hover {
+    transform: scale(1.05);
+  }
+  
+  .thumbnailImage {
+    width: 100%;
+    height: 190px; /* Increase height of thumbnails */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .thumbnailTitle {
+    margin-top: 5px;
+    font-size: 16px; /* Optional: Increase font size */
+    color: #333;
+  }
+  

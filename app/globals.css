@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.vachana-container {
+  overflow: hidden;
+  width: 100%; /* Full width of the parent */
+  position: relative;
+}
+
+.vachana-slider {
+  display: flex;
+  width: 200%; /* Width to ensure all cards fit and scroll */
+  animation: scrollLeftRight 50s linear infinite;
+  /* Adjust the duration for smooth scrolling */
+  animation-play-state: running;
+}
+
+.vachana-card {
+  flex: 0 0 20%; /* Each card takes up 20% of the container */
+  margin: 10px;
+  padding: 20px;
+  background: linear-gradient(135deg, #2018393b, #716f6f, #201f1e);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  text-align: center;
+  white-space: normal; /* Allows text to wrap within the card */
+}
+
+.vachana-container:hover .vachana-slider {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeftRight {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tailwind Custom Grid Background Pattern */
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(35, 32, 32, 0.1) 1px, transparent 2px),
+      linear-gradient(to bottom, rgba(37, 35, 35, 0.1) 1px, transparent 2px);
+    background-size: 30px 30px;
+    animation: move-grid 10s linear infinite;
+  }
+}
+
+/* Keyframes for Moving Grid */
+@keyframes move-grid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+/* Add this to your global CSS or a CSS module */
+.grid-background {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr); /* Adjust the number of columns */
+  grid-template-rows: repeat(10, 1fr);    /* Adjust the number of rows */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.grid-cell {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 238, 238, 0.1); /* Base color of grid cells */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-cell:hover {
+  background-color: #f39c12; /* Change to a glowing color */
+  box-shadow: 0 0 10px 5px rgba(243, 156, 18, 0.6); /* Glowing effect */
+}
+
+.pointer-enabled {
+  pointer-events: auto; /* Enable hover interaction */
+}
