@@ -6,15 +6,24 @@ import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
 import Image from 'next/image';
 
 const images = [
-  '/images/image1.jpg',
-  '/images/image2.jpg',
-  '/images/image3.jpg',
-  '/images/image4.jpg',
-  '/images/image5.jpg',
-  '/images/image6.jpg',
-  '/images/image7.jpg',
-  '/images/image8.jpg',
-  '/images/image9.jpg',
+  '/images/Basava-1.jpg',
+  '/images/Basava-2.jpg',
+  '/images/Basava-3.jpg',
+  '/images/Basava-4.jpg',
+  '/images/Basava-5.jpg',
+  '/images/Basava-6.jpg',
+  '/images/Basava-7.jpg',
+  '/images/Basava-8.jpg',
+  '/images/Basava-9.jpg',
+  '/images/Basava-10.jpg',
+  '/images/Basava-11.jpg',
+  '/images/Basava-12.jpg',
+  '/images/Basava-13.jpg',
+  '/images/Basava-14.jpg',
+  '/images/Basava-15.jpg',
+  '/images/Basava-16.jpg',
+  '/images/Basava-17.jpg',
+  '/images/Basava-18.jpg',
   // Add more image paths as needed
 ];
 
